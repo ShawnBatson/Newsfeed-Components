@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Professional Doggo Translator",
+    date: 'Dec 10th, 2019',
+    firstParagraph: 'Doggo ipsum you are doin me a concern wow such tempt sub woofer many pats aqua doggo pupper wow very biscit shibe, floofs doggorino the neighborhood pupper boofers tungg. what a nice floof I am bekom fat. Very taste wow long doggo maximum borkdrive wrinkler heckin angery woofer extremely cuuuuuute doggo dat tungg tho boof, length boy you are doing me a frighten heck big ol doggo heckin angery woofer h*ck. Heckin good boys and girls porgo pupper, very good spot.',
+
+    secondParagraph: 'Very hand that feed shibe h*ck lotsa pats big ol pupper woofer corgo, ur givin me a spook heck smol many pats. Boofers long woofer pupperino doggorino long woofer, maximum borkdrive ur givin me a spook shooberino. Waggy wags doing me a frighten long woofer ruff boof          shooberino pupperino, shoober long water shoob shooberino fat boi. sub woofer puggorino most angery pupper I have ever seen. Yapper shoober he made many woofs, thicc.',
+    
+    thirdParagraph: 'Blop vvv ur givin me a spook noodle horse tungg big ol pupper tungg, wow very biscit floofs thicc fat boi woofer. Doggo wrinkler heck much ruin diet shooberino yapper, borkdrive what a nice floof mlem you are doing me the shock. Long bois porgo ur givin me a spook doggorino smol, thicc you are doing me a frighten waggy wags. Blop fluffer thicc stop it fren long bois, shibe wow such tempt vvv. You are doin me a concern shooberino I am bekom fat bork clouds borkf, extremely cuuuuuute big ol pupper puggorino the neighborhood pupper, doggo woofer what a nice floof yapper.'
   }
 ];
 
@@ -115,40 +124,42 @@ const data = [
 
 const article = document.querySelector('.articles');
 
-data.foreEach((dataInput) => {
-  article.appendChild(createArticle(dataInput.title, dataInput.date, dataInput.firstParagraph, dataInput.secondParagraph, dataInput.thirdParagraph));
+data.forEach((dataInput) => {
+  article.appendChild(createArticle(dataInput.title, dataInput.date1, dataInput.firstParagraph, dataInput.secondParagraph, dataInput.thirdParagraph));
 })
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
-  const head = document.createElement('div')
-  const titleOf = document.creatElement('h2');
-  const date = document.createElement('p');
+  const head = document.createElement('div');
+  const titleOf = document.createElement('h2');
+  const dateOne = document.createElement('p');
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
-  const btn = document.createelement('span');
+  const btn = document.createElement('span');
 
   head.appendChild(titleOf);
-  head.appendChild(date)
-  head.appendhChild(para1);
+  head.appendChild(dateOne);
+  head.appendChild(para1);
   head.appendChild(para2);
   head.appendChild(para3);
   head.appendChild(btn);
 
   head.classList.add('article');
-  date.classList.add('date')
+  dateOne.classList.add('date');
   btn.classList.add('expandButton');
 
   titleOf.textContent = title;
-  date.textContent = date;
+  dateOne.textContent = date;
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
+  btn.textContent = 'Push';
 
   btn.addEventListener('click', (event) => {
     head.classList.toggle('article-open');
   })
 
-  return article;
+  return head;
 
 }
+
