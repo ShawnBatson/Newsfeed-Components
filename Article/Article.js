@@ -125,7 +125,7 @@ const data = [
 const article = document.querySelector('.articles');
 
 data.forEach((dataInput) => {
-  article.appendChild(createArticle(dataInput.title, dataInput.date1, dataInput.firstParagraph, dataInput.secondParagraph, dataInput.thirdParagraph));
+  article.appendChild(createArticle(dataInput.title, dataInput.date, dataInput.firstParagraph, dataInput.secondParagraph, dataInput.thirdParagraph));
 })
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
