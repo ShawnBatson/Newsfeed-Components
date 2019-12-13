@@ -54,13 +54,21 @@ let menuItems = [
   }
 
   document.querySelector('.menu-button').addEventListener('click', () => {
-    first.classList.toggle('menu--open')
-  })
-
+    const classes = Array.from(first.classList);
+    if (classes.includes('menu--open')) {
+      gsap.to('.menu', {duration: 3, x: 0, onComplete:function(){
+        first.style.display = 'inline-block';
+      }})
+      first.classList.remove('menu--open')
+      console.log('made it here')
+    } else {
+    first.classList.add('menu--open')
+    gsap.to('.menu', {duration: 3, x: 350})
+  }
+})
   return first
   }
 
 document.querySelector('.header').appendChild(menu(menuItems))
 
 
-gsap.to('.menu', {duration: 3, x: 350})
