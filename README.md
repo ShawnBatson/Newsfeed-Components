@@ -29,7 +29,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Add your team lead as a reviewer on the pull-request
 * [ ] Your team lead will count the project as complete by merging the branch back into master.
 
-### Preprocessor Setup
+### Preprocessor Setup 
 
   * Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder. 
   * Open index.html in your browser
